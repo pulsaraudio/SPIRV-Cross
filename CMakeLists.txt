@@ -72,7 +72,6 @@ set(spirv-compiler-options "")
 set(spirv-compiler-defines "")
 set(spirv-cross-link-flags "")
 
-message(STATUS "SPIRV-Cross: Finding Git version for SPIRV-Cross.")
 set(spirv-cross-build-version "unknown")
 find_package(Git)
 if (GIT_FOUND)
@@ -83,7 +82,6 @@ if (GIT_FOUND)
 		ERROR_QUIET
 		OUTPUT_STRIP_TRAILING_WHITESPACE
 		)
-	message(STATUS "SPIRV-Cross: Git hash: ${spirv-cross-build-version}")
 else()
 	message(STATUS "SPIRV-Cross: Git not found, using unknown build version.")
 endif()
